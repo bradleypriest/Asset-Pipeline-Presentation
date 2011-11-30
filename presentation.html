@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Sample CSSS presentation</title>
+
+<!-- Don't alter this, CSSS needs it to work -->
+<link href="slideshow.css" rel="stylesheet" />
+
+<!-- Theme-specific styles go here (themes can be reused in multiple talks) -->
+<link href="theme.css" rel="stylesheet" />
+
+<!-- Talk-specific styles go here -->
+<link href="talk.css" rel="stylesheet" />
+
+</head>
+<body data-duration="45">
+
+<header id="intro" class="slide">
+  <h1>
+    Rails 3.1: Asset Pipeline
+    <img src= "img/intro.png"/>
+  </h1>
+
+  <p class="attribution">By Bradley Priest</p>
+</header>
+
+<section>
+	<header class="slide">
+		<h1>What we're currently doing wrong</h1>
+	</header>
+
+  <section class="slide">
+    <h2>Organisation</h2>
+    <ul>
+      <li class="delayed">Currently most Rails apps treat CSS/JS/Images as second-class citizens</li>
+      <li class="delayed">They get lumped together into a couple of giant folders inside /public</li>
+      <li class="delayed">Mixture of custom code, 3rd party assets</li>
+    </ul>
+   </section>
+   <section class="slide">
+      <h2>Optimization</h2>
+      <ul>
+        <li class="delayed">It's currently quite an effort to optimize JS and CSS easily</li>
+        <li class="delayed">Jammit is a great answer, but not enough people use it</li>
+        <li class="delayed">Minified/Concatenated CSS/JS is always better</li>
+      </ul>
+	 </section>
+
+</section>
+<section>
+	<header class="slide">
+  <h1>The Asset Pipeline and You</h1>
+	</header>
+
+  <section class="slide">
+    <h2>Organisation</h2>
+    <ul>
+      <li class="strike">Currently most Rails apps treat CSS/JS/Images as second-class citizens</li>
+      <li class="strike">They get lumped together into a couple of giant folders inside /public</li>
+      <li class="strike">Mixture of custom code, 3rd party assets</li>
+    </ul>
+    The asset pipeline moves your assets out of the public folder:
+    <ul>
+      <li>app/assets</li>
+      <li>lib/assets</li>
+      <li>vendor/assets</li>
+    </ul>
+   </section>
+   <section class="slide">
+   <h2>Optimization</h2>
+      <ul>
+        <li class="strike">It's currently quite an effort to optimize JS and CSS easily</li>
+        <li class="strike">Jammit is a great answer, but not enough people use it</li>
+        <li class="strike">Minified/Concatenated CSS/JS is always better</li>
+      </ul>
+
+      <ul>
+        <li>The asset pipeline provides the gem "Sprockets" which automatically concatenates and minifies your JS/CSS</li>
+        <li>It's still in it's infancy so it has a few bugs.</li>
+      </ul>
+  </section>
+</section>
+<section>
+   <header class="slide">
+   <h2>Shiny Things</h2>
+      <img src="img/gemfile.jpg" />
+	 </header>
+   <section class="slide">
+   <h2>Sane Defaults</h2>
+      <a href="https://github.com/rails/rails/compare/9333ca7...23aa7da" target="_blank">The iconic commit</a>
+      <p>Rails 3.1 also brought some new defaults with it:</p>
+
+      <ul>
+        <li>jQuery instead of Prototype</li>
+        <li>Sass</li>
+        <li>Coffeescript</li>
+      </ul>
+
+  </section>
+   <section class="slide">
+   <img src="img/scss.jpg" class="right">
+   <h2>Sass</h2>
+   <ul>
+     <li>Variables</li>
+     <li>Nesting</li>
+     <li>Mixins</li>
+   </ul>
+   </section>
+   <section class="slide">
+   <img src="img/coffee.jpg" class="right">
+   <h2>CoffeeScript</h2>
+   <p>Nothing but the good stuff</p>
+   <img src="img/js-good.jpg" />
+   </section>
+
+
+</section>
+<footer class="slide">
+	<h2>Thank you!</h2>
+	<p>Closing remarks</p>
+</footer>
+
+<script src="slideshow.js"></script>
+
+<!-- Make sure the reference to -prefix-free works -->
+<script src="prefixfree.min.js"></script>
+
+<!-- Uncomment the plugins you need
+<script src="plugins/css-edit.js"></script>
+<script src="plugins/css-snippets.js"></script>
+<script src="plugins/css-controls.js"></script>
+-->
+<script>var slideshow = new SlideShow();</script>
+
+</body>
+</html>
