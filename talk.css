@@ -52,3 +52,12 @@
   float:right;
   height:100%;
  }
+ .left{
+  float:left;
+  height:100%;
+ }
+.slide > ul > li.strike::before {
+  content: '✘';
+  color: red;
+  padding-right: .2em;
+}
